@@ -41,7 +41,7 @@
   Initial Release 0.1.0
 
   Release date: Xth X 202X
-  This release corresponds to the LASER version used by [Alfonso-Gonzalez et al. 202X]()
+  This release corresponds to the SpliceFlow version used by [Alfonso-Gonzalez et al. 202X]()
 
   ## Contact
 
