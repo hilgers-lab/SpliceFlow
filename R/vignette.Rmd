@@ -1,0 +1,32 @@
+---
+title: "SpliceFlow"
+author: "Carlos Alfonso Gonzalez"
+date: "2024-06-12"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Build intron database
+The function `prepareFlowRegions()` will create a an object containing all introns from the genome and the intron-exon pairs that will quantify splicing efficiency mentioned above. In order to construct an accurate intron database a junction file is required to pre-filter not used intron-exon that can imapct the analyasis
+
+```{r}
+reference_path <- "/Users/Alfonso/Documents/GitHub/SpliceFlow/data/protein_coding.genes.gtf.gz"
+load("/Users/Alfonso/Documents/GitHub/SpliceFlow/data/neuronal.junctions.rda")
+regionsFlow <- prepareFlowRegions(ref, neuronal_junctions )
+```
+
+#Quantify 
+
+```{r}
+
+```
+
+
+
+
+
