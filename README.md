@@ -6,7 +6,6 @@
   ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hilgers-lab/LASER)
 [![Maintained?](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen)](https://github.com/hilgers-lab/LASER/graphs/contributors)
 [![Install](https://img.shields.io/badge/Install-Github-brightgreen)](#installation)
-  [![Downloads](https://img.shields.io/github/downloads/hilgers-lab/LASER/total)]()
   ![GitHub](https://img.shields.io/github/license/hilgers-lab/LASER)
   [![DOI](https://zenodo.org/badge/580128861.svg)](https://zenodo.org/badge/latestdoi/580128861)
 
