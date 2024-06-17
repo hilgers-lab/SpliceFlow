@@ -1,4 +1,4 @@
-![Logo!](data/LASER_new.png](https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp)
+![Logo](https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp)
 # Splice Flow
 ## Quantification of splicing efficiencies from total RNA-seq data
 <!-- badges: start -->
