@@ -1,6 +1,5 @@
 # <img src="https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp" alt="Logo" width="20%" align="left"> SpliceFlow
 
-## Measuring Splicing Efficiency from Total RNA-Seq Data
 <!-- badges: start -->
 
   ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hilgers-lab/LASER)
@@ -11,7 +10,7 @@
 
   <!-- badges: end -->
   
-  Splice flow determines the efficiency of splicing of invidividual exons. 
+  Measuring Splicing Efficiency from Total RNA-Seq Data
 
 
   ### Installation
