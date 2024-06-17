@@ -1,4 +1,4 @@
-# <img src="https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp" alt="Logo" width="20%" align="left"> SpliceFlow
+# <img src="https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.jpg" alt="Logo" width="20%" align="left"> SpliceFlow
 
 <!-- badges: start -->
 
