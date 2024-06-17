@@ -44,3 +44,5 @@
   Developer Carlos Alfonso-Gonzalez. For questions or feedback you can contact:
 
     alfonso@ie-freiburg.mpg.de
+ 
+  SpliceFlow logo generated using DALL·E 3 Ultra by OpenAI 
