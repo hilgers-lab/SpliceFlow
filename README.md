@@ -8,7 +8,7 @@
   ![GitHub](https://img.shields.io/github/license/hilgers-lab/LASER)
   <!-- badges: end -->
   
-  Measuring Splicing Efficiency from Total RNA-Seq Data, implementing statitical methods from (Khodor YL, et al., 2011)[doi: 10.1101/gad.178962.111] 
+  Measuring Splicing Efficiency from Total RNA-Seq Data, implementing statitical methods from [Khodor YL, et al., 2011](doi: 10.1101/gad.178962.111) 
   
 
   ### Installation
