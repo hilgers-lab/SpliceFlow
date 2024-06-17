@@ -8,8 +8,8 @@
   ![GitHub](https://img.shields.io/github/license/hilgers-lab/LASER)
   <!-- badges: end -->
   
-  Measuring Splicing Efficiency from Total RNA-Seq Data
-
+  Measuring Splicing Efficiency from Total RNA-Seq Data, implementing statitical methods from (Khodor YL, et al., 2011)[doi: 10.1101/gad.178962.111] 
+  
 
   ### Installation
 
@@ -18,13 +18,13 @@
   devtools::install_github("hilgers-lab/SpliceFlow")
   ```
   ### Input files
-  * Genome Alignment bam files [STAR]
+  * Genome Alignment bam files [STAR](https://github.com/alexdobin/STAR)
   * Reference annotation in gtf format. Example file [here](https://github.com/hilgers-lab/LASER/blob/master/inst/exdata/dm6.annot.gtf.gz)
   * Short read sequencing SJ.out files [STAR](https://github.com/alexdobin/STAR). Example file in [here](https://github.com/hilgers-lab/LASER/blob/master/inst/exdata/short_read_junctions.SJ.out.tab). We recommend to pull SJ.out into a single SJ.out from many experiments and filter by min counts.
 
+  
   ### Usage
-  A step by step guide for data processing and identification of exon-couplings can be found
-  [here](https://hilgers-lab.github.io/LASER/docs/LASER.html).
+  A step by step guide for data processing and identification of splicing efficiency in vignette. 
 
   ```
   library(SpliceFlow)
