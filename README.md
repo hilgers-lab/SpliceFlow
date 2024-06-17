@@ -6,8 +6,6 @@
 [![Maintained?](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen)](https://github.com/hilgers-lab/LASER/graphs/contributors)
 [![Install](https://img.shields.io/badge/Install-Github-brightgreen)](#installation)
   ![GitHub](https://img.shields.io/github/license/hilgers-lab/LASER)
-  [![DOI](https://zenodo.org/badge/580128861.svg)](https://zenodo.org/badge/latestdoi/580128861)
-
   <!-- badges: end -->
   
   Measuring Splicing Efficiency from Total RNA-Seq Data
