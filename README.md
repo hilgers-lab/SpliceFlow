@@ -1,7 +1,5 @@
-![Logo](https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp)
-# <img src="https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp" alt="Logo" width="20%" align="left"> Your Project Title
+# <img src="https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp" alt="Logo" width="20%" align="left"> SpliceFlow
 
-# Splice Flow
 ## Quantification of splicing efficiencies from total RNA-seq data
 <!-- badges: start -->
 
