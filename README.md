@@ -1,6 +1,6 @@
 # <img src="https://github.com/hilgers-lab/SpliceFlow/blob/main/data/logo.webp" alt="Logo" width="20%" align="left"> SpliceFlow
 
-## Quantification of splicing efficiencies from total RNA-seq data
+## Measuring Splicing Efficiency from Total RNA-Seq Data
 <!-- badges: start -->
 
   ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/hilgers-lab/LASER)
