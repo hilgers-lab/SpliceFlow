@@ -1,10 +1,11 @@
 ### RegionsFlow Class Definition ###
 #' S4 class for intron annotation data for a specific annotation version
 #'
-#' @slot reference.introns A GRanges object. The intron ranges annotated with the
+#' @slot FlowRegion A GRanges object. The intron ranges annotated with the
 #'   promoter information.
 #' @slot introns A GRanges object. intron coordinates
 #' @slot exonFlow A GRanges object. exon coordinates
+#' @slot quantFlow A GRanges object. exon coordinates
 #' @slot metadata data.frame specifying the links between the two.
 #'   gene id and internal promoter state
 #' @importFrom GenomicRanges GRanges
@@ -16,26 +17,29 @@
 setClass(
   "RegionsFlow",
   slots = c(
-    reference.introns = "GRanges",
+    FlowRegion = "GRanges",
     intronFlow = "GRanges",
     exonFlow = "GRanges",
+    quantFlow =  "GRanges",
     metadata = "data.frame"
   ),
   prototype = list(
-    reference.introns = GenomicRanges::GRanges(),
+    FlowRegion = GenomicRanges::GRanges(),
     intronFlow = GenomicRanges::GRanges(),
     exonFlow = GenomicRanges::GRanges(),
+    quantFlow = GenomicRanges::GRanges(),
     metadata= data.frame()
   )
 )
 ###################
 ### Constructor ###
 
-#' @param reference.introns A GRanges object containing annotated intron ranges
+#' @param FlowRegion A GRanges object containing annotated intron ranges
 #' @param intronFlow A data.frame containing mapping between transcript,
 #'   TSS, promoter and gene ids
 #' @param exonFlow A GRanges object containing promoter coordinates
 #' @param metadata A GRanges object containing promoter coordinates
+#' @param quantFlow A GRanges object containing promoter coordinates
 
 #' @name RegionsFlow
 #' @rdname RegionsFlow-class
@@ -47,21 +51,23 @@ setClass(
 #' @return A promoter annotation object with three slots: intronRanges,
 #'   promoterIdMapping and promoter Coordinates
 RegionsFlow <-
-  function(reference.introns = GenomicRanges::GRanges(),
+  function(FlowRegion = GenomicRanges::GRanges(),
            intronFlow = GenomicRanges::GRanges(),
            exonFlow = GenomicRanges::GRanges(),
+           quantFlow = GenomicRanges::GRanges(),
            metadata = data.frame()) {
     new(
       "RegionsFlow",
-      reference.introns = reference.introns,
+      FlowRegion = FlowRegion,
       intronFlow = intronFlow,
       exonFlow = exonFlow,
+      quantFlow = quantFlow,
       metadata = metadata)
   }
 
 setValidity("RegionsFlow", function(object) {
   check <- TRUE
-  if (is(object@reference.introns, 'GRanges') == FALSE) {
+  if (is(object@FlowRegion, 'GRanges') == FALSE) {
     check <- FALSE
   }
   if (is(object@intronFlow, 'GRanges') == FALSE) {
@@ -78,15 +84,15 @@ setValidity("RegionsFlow", function(object) {
 
 #' @param x A RegionsFlow object
 #'
-#' @describeIn RegionsFlow-class Getter for reference.introns
-#' @exportMethod reference.introns
+#' @describeIn RegionsFlow-class Getter for FlowRegion
+#' @exportMethod FlowRegion
 
-setGeneric("reference.introns", function(x) standardGeneric("reference.introns"))
+setGeneric("FlowRegion", function(x) standardGeneric("FlowRegion"))
 
-#' @describeIn intronFlow-class Getter for reference.introns
-#' @aliases reference.introns,intronFlow-method
+#' @describeIn intronFlow-class Getter for FlowRegion
+#' @aliases FlowRegion,intronFlow-method
 
-setMethod("reference.introns", "RegionsFlow", function(x) x@reference.introns)
+setMethod("FlowRegion", "RegionsFlow", function(x) x@FlowRegion)
 
 #' @describeIn intronFlow-class Getter for intronFlow
 #' @exportMethod intronFlow
@@ -112,7 +118,17 @@ setGeneric("exonFlow",
 setMethod("exonFlow", "RegionsFlow",
           function(x) x@exonFlow)
 
+setGeneric("quantFlow",
+           function(x) standardGeneric("quantFlow"))
 
+#' @describeIn intronFlow-class Getter for intronFlow
+#' @aliases intronFlow,intronFlow-method
+
+setMethod("quantFlow", "RegionsFlow",
+          function(x) x@quantFlow)
+
+#' @describeIn intronFlow-class Getter for intronFlow
+#' @exportMethod intronFlow
 ###############
 ### Setters ###
 
@@ -123,14 +139,14 @@ setMethod("exonFlow", "RegionsFlow",
 #' @exportMethod 'refintronFlow<-'
 #' @importFrom methods validObject
 
-setGeneric("reference.introns<-",
-           function(x, value) standardGeneric("reference.introns<-"))
+setGeneric("FlowRegion<-",
+           function(x, value) standardGeneric("FlowRegion<-"))
 
 #' @describeIn RegionsFlow-class Setter for intronRanges
 #' @aliases 'refintronFlow<-',RegionsFlow-method
 
-setMethod("reference.introns<-", "RegionsFlow", function(x, value) {
-  x@reference.introns <- value
+setMethod("FlowRegion<-", "RegionsFlow", function(x, value) {
+  x@FlowRegion <- value
   validObject(x)
   x
 })
@@ -195,12 +211,33 @@ setGeneric("metadata",
 setMethod("metadata", "RegionsFlow",
           function(x) x@metadata)
 
+##
+#' @param value refintronFlow, intron or exon to
+#'   be assigned
+#'
+#' @describeIn refintronFlow-class Setter for intron
+#' @exportMethod 'refintronFlow<-'
+#' @importFrom methods validObject
+
+setGeneric("quantFlow<-",
+           function(x, value) standardGeneric("quantFlow<-"))
+
+#' @describeIn RegionsFlow-class Setter for quantFlow
+#' @aliases 'quantFlow<-',RegionsFlow-method
+
+setMethod("quantFlow<-", "RegionsFlow", function(x, value) {
+  x@quantFlow <- value
+  validObject(x)
+  x
+})
+
+
 #' @rdname RegionsFlow-class
 #' @aliases show
 setMethod("show", "RegionsFlow", function(object) {
   cat("RegionsFlow object\n")
   cat("Introns per isoform:\n")
-  print(object@reference.introns)
+  print(object@FlowRegion)
   cat("\nIntron Flow:\n")
   print(object@intronFlow)
   cat("\nExon Flow:\n")

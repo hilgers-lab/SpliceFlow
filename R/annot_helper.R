@@ -5,6 +5,8 @@
 #' @return trimmed exon
 #' @export
 #' @import dplyr
+#' @importFrom magrittr %>%
+#' @importFrom dplyr left_join
 #' @examples
 addGeneName <- function(annotation, intron_database) {
   gene_to_gene_name_map <- annotation[annotation$type == "transcript"] %>%
@@ -24,6 +26,7 @@ addGeneName <- function(annotation, intron_database) {
 #' @return trimmed intron
 #' @export
 #' @import dplyr
+#' @import GenomicRanges
 #' @examples
 getIntronFraction <- function(grIntron) {
   pos <- grIntron[GenomicRanges::strand(grIntron) == "+"]
@@ -44,6 +47,7 @@ getIntronFraction <- function(grIntron) {
 #' @return trimmed exon
 #' @export
 #' @import dplyr
+#' @import GenomicRanges
 #' @examples
 getExonStart <- function(x) {
   pos <- x[GenomicRanges::strand(x) == "+"]

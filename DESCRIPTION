@@ -1,11 +1,31 @@
 Package: SpliceFlow
-Type: Package
-Title: What the Package Does (Title Case)
+Type: R Package
+Title: Quantification of splicing efficiency
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Carlos Alfonso Gonzalez 
+Authors@R: c(
+    person(given = "Carlos",
+           family = "Alfonso-Gonzalez",
+           role = c("cre"),
+           email = "carlos.alfonso.de@gmail.com"))
+Description: SpliceFlow uses RNA-seq data quantifies splicing effiency through reads mapping introns and exons.
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    knitr,
+    rmarkdown
+Imports:
+    DEXSeq,
+    dplyr,
+    tidyr,
+    GenomicRanges,
+    SummarizedExperiment,
+    Rsamtools,
+    GenomicAlignments,
+    magrittr,
+    BiocGenerics,
+    data.table,
+    rlang
+VignetteBuilder: knitr
+RoxygenNote: 7.3.1

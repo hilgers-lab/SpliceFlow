@@ -1,24 +1,33 @@
 ---
 title: "SpliceFlow"
-author: "Carlos Alfonso Gonzalez"
-date: "2024-06-12"
-output: html_document
-editor_options: 
-  chunk_output_type: console
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{SpliceFlow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-require(Rsamtools)
-require(GenomicAlignments)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+require(dplyr)
+```
+
+```{r setup}
+library(SpliceFlow)
+library(GenomicAlignments)
+library(Rsamtools)
+library(SummarizedExperiment)
 ```
 
 ## Build intron database
 The function `prepareFlowRegions()` will create a an object containing all introns from the genome and the intron-exon pairs that will quantify splicing efficiency mentioned above. In order to construct an accurate intron database a junction file is required to pre-filter not used intron-exon that can imapct the analyasis
 
 ```{r}
-ref <- "/Users/Alfonso/Documents/GitHub/SpliceFlow/data/protein_coding.genes.gtf.gz"
-load("/Users/Alfonso/Documents/GitHub/SpliceFlow/data/neuronal.junctions.rda")
+ref <- system.file("data", "protein_coding.genes.gtf.gz", package = "SpliceFlow")
+data("neuronal.junctions", package = "SpliceFlow")
 regionsFlow <- prepareFlowRegions(ref, neuronal_junctions )
 show(regionsFlow)
 ```
@@ -26,14 +35,13 @@ show(regionsFlow)
 # Quantify 
 
 ```{r}
-pathBams <-
-  list.files("data", pattern = "\\.bam$", full.names = TRUE)
-bamFiles = BamFileList(pathBams)
-names(bamFiles) <-
-  c("nascent_R1", "nascent_R2", "polyA_R1", "polyA_R2")
+pathBams <- list.files(system.file("data", package = "SpliceFlow"), 
+                       pattern = "\\.bam$", full.names = TRUE)
+bamFiles = Rsamtools::BamFileList(pathBams)
+names(bamFiles) <- c("nascent_R1", "nascent_R2", "polyA_R1", "polyA_R2")
 # regions to quantify
 # counts 
-se = summarizeOverlaps(regionsFlow@quantFlow,
+se = GenomicAlignments::summarizeOverlaps(regionsFlow@quantFlow,
                        bamFiles,
                        singleEnd = TRUE,
                        ignore.strand = TRUE)
@@ -41,8 +49,9 @@ rowData(se)$tx_name <- paste0( rowData(se)$gene_id, ":E", rowData(se)$exon_id)
 rowData(se)$transcript_id <- rowData(se)$exon_intron_region
 colData(se)$condition = factor(c("nascent", "nascent", "mrna", "mrna"))
 result <- SpliceFlow(se, regionsFlow)
+# results stored in rowData
+rowData(result)
 ```
-
 
 
 
