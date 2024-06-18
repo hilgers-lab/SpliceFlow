@@ -11,6 +11,5 @@ importFrom(DEXSeq,"DEXSeqDataSetFromSE")
 importFrom(DEXSeq,"DEXSeq")
 importFrom(data.table,"as.data.table")
 importFrom(data.table,"as.data.table")
-importFrom(rlang, .data)
 
 

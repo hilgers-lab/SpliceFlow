@@ -1,5 +1,5 @@
 Package: SpliceFlow
-Type: R Package
+Type: Package
 Title: Quantification of splicing efficiency
 Version: 0.1.0
 Author: Carlos Alfonso Gonzalez 
@@ -26,6 +26,7 @@ Imports:
     magrittr,
     BiocGenerics,
     data.table,
-    rlang
+    rlang,
+    txdbmaker
 VignetteBuilder: knitr
 RoxygenNote: 7.3.1
