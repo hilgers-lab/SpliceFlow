@@ -15,7 +15,7 @@
 #' @importFrom txdbmaker makeTxDbFromGFF
 #' @examples
 retrieveIntrons <- function(refAnnotation.path, junctions) {
-  txdb <- txdbmaker::makeTxDbFromGFF(file = refAnnotation.path, format = "gtf")
+  txdb <- GenomicFeatures::makeTxDbFromGFF(file = refAnnotation.path, format = "gtf")
   message("Retrieving intron annotation")
   introns <- GenomicFeatures::intronsByTranscript(txdb, use.names = TRUE)
   genes <- rtracklayer::import.gff(refAnnotation.path)
