@@ -6,7 +6,7 @@
 [![Maintained?](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen)](https://github.com/hilgers-lab/LASER/graphs/contributors)
 [![Install](https://img.shields.io/badge/Install-Github-brightgreen)](#installation)
   ![GitHub](https://img.shields.io/github/license/hilgers-lab/LASER)
-  ![GitHub release (latest by date)](https://img.shields.io/github/downloads/hilgers-lab/SpliceFlow/total)
+  ![GitHub release (latest by date)](https://img.shields.io/github/downloads/hilgers-lab/SpliceFlow/20)
 
   <!-- badges: end -->
   
