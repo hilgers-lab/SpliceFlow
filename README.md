@@ -6,6 +6,8 @@
 [![Maintained?](https://img.shields.io/badge/Maintained%3F-Yes-brightgreen)](https://github.com/hilgers-lab/LASER/graphs/contributors)
 [![Install](https://img.shields.io/badge/Install-Github-brightgreen)](#installation)
   ![GitHub](https://img.shields.io/github/license/hilgers-lab/LASER)
+  ![GitHub release (latest by date)](https://img.shields.io/github/downloads/hilgers-lab/SpliceFlow/total)
+
   <!-- badges: end -->
   
   Measuring Splicing Efficiency from Total RNA-Seq Data, implementing statitical methods from [Khodor YL, et al., 2011](https://genesdev.cshlp.org/content/25/23/2502.long) 
